@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="prime_col">#2D2F31</color>
+    <color name="prime_col_dark">#292929</color>
+    <color name="col_accent">#FDBE3B</color>
+    <color name="col_src_icon">#DBDBDB</color>
+    <color name="col_txt_hint">#7B7B7B</color>
+    <color name="col_quick_act_bar_bg">#2F2D2E</color>
+    <color name="col_subt">#CECECE</color>
+    <color name="col_def_note">#3C3F41</color>
+    <color name="col_note_sub_txt">#FAFAFA</color>
+    <color name="col_miscell_bg">#323232</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colNote2">#FDBE3B</color>
+    <color name="colNote3">#FF4842</color>
+    <color name="colNote4">#3592C4</color>
+    <color name="colNote5">#000000</color>
+    <color name="col_src_bg">#4E5051</color>
+    <color name="col_icon">#A4A4A4</color>
+    <color name="col_del">#FF4842</color>
+</resources>

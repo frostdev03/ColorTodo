@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Color Todo</string>
+    <string name="title">Title</string>
+    <string name="type_subtitle_here">Type subtitle here</string>
+    <string name="set_deadline">Set deadline</string>
+    <string name="type_description_here">Type description here</string>
+    <string name="delete">Delete</string>
+    <string name="setup">SETUP</string>
+    <string name="pick_your_color">Pick your color</string>
+    <string name="add_image">Add image</string>
+    <string name="add_url">Add URL</string>
+    <string name="color_todo">- COLOR TODO -</string>
+    <string name="by_fahril">By Fahril</string>
+    <string name="enter_url_here">Enter URL here</string>
+    <string name="add">ADD</string>
+    <string name="cancel">CANCEL</string>
+    <string name="are_you_sure_want_to_delete_this_todo">Are you sure want to delete this Todo?</string>
+    <string name="delete_todo">Delete Todo</string>
+</resources>
