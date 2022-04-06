@@ -84,7 +84,7 @@
         android:includeFontPadding="false"
         android:padding="8dp"
         android:text="@string/cancel"
-        android:textColor="@color/col_accent"
+        android:textColor="@color/col_del"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/txtAdd"

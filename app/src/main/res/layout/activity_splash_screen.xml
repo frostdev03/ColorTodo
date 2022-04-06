@@ -14,7 +14,7 @@
         android:fontFamily="@font/ubuntu_bold"
         android:text="@string/color_todo"
         android:textColor="@color/col_accent"
-        android:textSize="@dimen/_30sdp"
+        android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
