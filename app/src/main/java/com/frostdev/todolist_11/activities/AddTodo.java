@@ -11,7 +11,11 @@ import androidx.fragment.app.DialogFragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -63,6 +67,10 @@ public class AddTodo extends AppCompatActivity {
     private TextView txtURL;
     private LinearLayout layoutURL;
 
+    //notification
+    public static final String NOTIFICATION_CHANNEL_ID = "10001";
+    public static final String default_notification_channel_id = "default";
+
     //dialog
     private AlertDialog dialogAddURL;
     private AlertDialog dialogDelete;
@@ -97,21 +105,22 @@ public class AddTodo extends AppCompatActivity {
         txtDateTime = findViewById(R.id.dateTodo);
 
         //implementasi datepicker
-        final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+//        final Calendar calendar = Calendar.getInstance();
+//        int year = calendar.get(Calendar.YEAR);
+//        int month = calendar.get(Calendar.MONTH);
+//        int day = calendar.get(Calendar.DAY_OF_MONTH);
+//
+//        txtDateTime.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DatePickerDialog datePickerDialog = new DatePickerDialog(
+//                        AddTodo.this, android.R.style.Theme_DeviceDefault_Dialog,
+//                        dateSetListener, year, month, day);
+//                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                datePickerDialog.show();
+//            }
+//        });
 
-        txtDateTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        AddTodo.this, android.R.style.Theme_DeviceDefault_Dialog,
-                        dateSetListener, year, month, day);
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                datePickerDialog.show();
-            }
-        });
 
         dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -158,6 +167,20 @@ public class AddTodo extends AppCompatActivity {
 
         initMiscellanous();
         setSubIndicatorColor();
+    }
+
+    //datetime schedule
+    private void dateSchedule(Notification notification, long delay){
+        Intent notifIntent = new Intent(this, NotificationTodo.class);
+        notifIntent.putExtra(NotificationTodo.NOTIFICATION_ID, 1);
+        notifIntent.putExtra(NotificationTodo.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast
+                (this, 0, notifIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getLayoutInflater().getContext().getSystemService(Context.ALARM_SERVICE);
+        if (alarmManager != null){
+            alarmManager.set(AlarmManager.RTC_WAKEUP, delay, pendingIntent);
+        }
+
     }
 
     ///yg dimunculkan ketika item di klik
