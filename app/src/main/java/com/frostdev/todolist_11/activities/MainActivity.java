@@ -33,16 +33,12 @@ public class MainActivity extends AppCompatActivity implements TodoListener {
     private RecyclerView todoRecyclerView;
     private List<Todo> todoList;
     private TodoAdapter todoAdapter;
-    public static final String NOTIFICATION_CHANNEL_ID = "1";
-    private final static String default_notification_channel_id = "default";
 
     public static final int REQUEST_CODE_ADD_TODO = 1;
     public static final int REQUEST_CODE_UPDATE_TODO = 2;
     public static final int REQUEST_CODE_SHOW_TODO = 3;
 
     private int todoClickedPosition = -1;
-
-
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -84,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements TodoListener {
         todoRecyclerView.setAdapter(todoAdapter);
 
         getTodo(REQUEST_CODE_SHOW_TODO, false);
-
 
     }
 
